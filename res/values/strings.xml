@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MnemonicRevisionHelper</string>
+    <string name="mnemonic_input_hint">Add letters here to get mnemonic</string>
 </resources>

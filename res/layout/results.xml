@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/tableLayout1"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+
+     <!--2 columns-->
+    <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+
+        <TextView
+                android:id="@+id/textView1"
+                android:width="75px"
+                android:background="#CC22FF"
+                android:text="Origin"/>
+                <!--android:layout_span="1"-->
+
+        <TextView
+                android:id="@+id/textView2"
+                android:text="W there"
+
+                android:background="#EC7703"
+                />
+    </TableRow>
+
+
+    <!--2 columns-->
+    <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+
+        <TextView
+                android:id="@+id/textView3"
+                android:width="75px"
+                android:background="#CC22FF"
+                android:text="Origin"/>
+        <!--android:layout_span="1"-->
+
+        <TextView
+                android:id="@+id/textView4"
+                android:text="and even more stuff there and even more stuff there and even more stuff there"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ECDE03"
+                />
+    </TableRow>
+
+</TableLayout>

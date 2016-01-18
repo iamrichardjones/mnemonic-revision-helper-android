@@ -4,45 +4,38 @@
              android:layout_width="fill_parent"
              android:layout_height="fill_parent">
 
-     <!--2 columns-->
     <TableRow
-            android:id="@+id/tableRow3"
+            android:id="@+id/originRow"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:padding="5dip" >
 
         <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/originTV"
                 android:width="75px"
                 android:background="#CC22FF"
-                android:text="Origin"/>
-                <!--android:layout_span="1"-->
-
+                android:text="@string/origin"/>
         <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/originValueTV"
                 android:text="W there"
-
                 android:background="#EC7703"
                 />
     </TableRow>
 
-
-    <!--2 columns-->
     <TableRow
-            android:id="@+id/tableRow2"
+            android:id="@+id/answerRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dip" >
 
         <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/answerTV"
                 android:width="75px"
-                android:background="#CC22FF"
-                android:text="Origin"/>
-        <!--android:layout_span="1"-->
+                android:background="#AA11FF"
+                android:text="@string/answer"/>
 
         <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/answerValueTV"
                 android:text="and even more stuff there and even more stuff there and even more stuff there"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

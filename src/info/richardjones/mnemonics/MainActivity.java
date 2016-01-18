@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
+import android.widget.TextView;
+
+import java.util.Date;
 
 public class MainActivity extends Activity {
     /**
@@ -29,5 +33,20 @@ public class MainActivity extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
         layoutMain.addView(layoutTop);
         layoutMain.addView(layoutBottom, relParam);
+
+        populateTable();
+    }
+
+    private void populateTable() {
+        TableLayout table = (TableLayout) findViewById(R.id.resultsTable);
+        for (int i = 0; i < 2; i++) {
+            View tableRow = LayoutInflater.from(this).inflate(R.layout.results,null,false);
+            TextView originValueTV  = (TextView) tableRow.findViewById(R.id.originValueTV);
+            TextView answerValueTV  = (TextView) tableRow.findViewById(R.id.answerValueTV);
+
+            originValueTV.setText("" + (i + 1));
+            answerValueTV.setText("" + new Date());
+            table.addView(tableRow);
+        }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/tableLayout1"
+             android:id="@+id/resultsTable"
              android:layout_width="fill_parent"
              android:layout_height="fill_parent">
 
@@ -12,13 +12,14 @@
 
         <TextView
                 android:id="@+id/originTV"
-                android:width="75px"
+                android:width="85px"
                 android:background="#CC22FF"
-                android:text="@string/origin"/>
+                android:text="@string/origin"
+                />
         <TextView
                 android:id="@+id/originValueTV"
-                android:text="W there"
                 android:background="#EC7703"
+                android:text="W there"
                 />
     </TableRow>
 
@@ -26,20 +27,22 @@
             android:id="@+id/answerRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dip" >
+            android:padding="5dip"
+            android:paddingBottom="100px">
 
         <TextView
                 android:id="@+id/answerTV"
-                android:width="75px"
+                android:width="85px"
                 android:background="#AA11FF"
-                android:text="@string/answer"/>
+                android:text="@string/answer"
+                />
 
         <TextView
                 android:id="@+id/answerValueTV"
-                android:text="and even more stuff there and even more stuff there and even more stuff there"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#ECDE03"
+                android:text="and even more stuff there and even more stuff there and even more stuff there"
                 />
     </TableRow>
 

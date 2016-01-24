@@ -18,8 +18,8 @@
                 />
         <TextView
                 android:id="@+id/originValueTV"
-                android:background="#EC7703"
-                android:text="W there"
+                android:background="#E17703"
+                android:text="W theFre"
                 />
     </TableRow>
 

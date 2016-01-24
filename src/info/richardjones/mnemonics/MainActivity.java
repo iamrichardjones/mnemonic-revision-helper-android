@@ -5,19 +5,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TableLayout;
-import android.widget.TextView;
+import android.widget.ListView;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
     /**
      * Entry point....
      */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         LinearLayout layoutMain = new LinearLayout(this);
@@ -26,27 +26,98 @@ public class MainActivity extends Activity {
 
         LayoutInflater inflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LinearLayout layoutTop = (LinearLayout) inflate.inflate(R.layout.mnemonic_input, null);
-        TableLayout layoutBottom = (TableLayout) inflate.inflate(R.layout.results, null);
+        ListView layoutBottom = (ListView) inflate.inflate(R.layout.results_list, null);
 
-        TableLayout.LayoutParams relParam = new TableLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
         layoutMain.addView(layoutTop);
-        layoutMain.addView(layoutBottom, relParam);
+        layoutMain.addView(layoutBottom);
 
-        populateTable();
-    }
 
-    private void populateTable() {
-        TableLayout table = (TableLayout) findViewById(R.id.resultsTable);
-        for (int i = 0; i < 2; i++) {
-            View tableRow = LayoutInflater.from(this).inflate(R.layout.results,null,false);
-            TextView originValueTV  = (TextView) tableRow.findViewById(R.id.originValueTV);
-            TextView answerValueTV  = (TextView) tableRow.findViewById(R.id.answerValueTV);
+        final ListView listview = (ListView) findViewById(R.id.listview);
+        String[] values = new String[] { "MacOS", "iPhone", "WindowsMobile", "Blackberry", "WebOS" };
 
-            originValueTV.setText("" + (i + 1));
-            answerValueTV.setText("" + new Date());
-            table.addView(tableRow);
+        final List<String> list = new ArrayList<String>();
+        for (int i = 0; i < values.length; ++i) {
+            list.add(values[i]);
         }
+
+        final MnemonicResultsArrayAdapter adapter = new MnemonicResultsArrayAdapter(this, list);
+        listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                final String item = (String) parent.getItemAtPosition(position);
+                view.animate().setDuration(2000).alpha(0)
+                        .withEndAction(new Runnable() {
+                            @Override
+                            public void run() {
+                                list.remove(item);
+                                adapter.notifyDataSetChanged();
+                                view.setAlpha(1);
+                            }
+                        });
+            }
+        });
     }
+
+//    private class StableArrayAdapter extends ArrayAdapter<String> {
+//
+//        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+//
+//        public StableArrayAdapter(Context context, int textViewResourceId,
+//                                  List<String> objects) {
+//            super(context, textViewResourceId, objects);
+//            for (int i = 0; i < objects.size(); ++i) {
+//                mIdMap.put(objects.get(i), i);
+//            }
+//        }
+//
+//        @Override
+//        public long getItemId(int position) {
+//            String item = getItem(position);
+//            return mIdMap.get(item);
+//        }
+//
+//        @Override
+//        public boolean hasStableIds() {
+//            return true;
+//        }
+//
+//    }
+//
+//        @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        LinearLayout layoutMain = new LinearLayout(this);
+//        layoutMain.setOrientation(LinearLayout.VERTICAL);
+//        setContentView(layoutMain);
+//
+//        LayoutInflater inflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        LinearLayout layoutTop = (LinearLayout) inflate.inflate(R.layout.mnemonic_input, null);
+//        TableLayout layoutBottom = (TableLayout) inflate.inflate(R.layout.results, null);
+//
+//        TableLayout.LayoutParams relParam = new TableLayout.LayoutParams(
+//                RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                RelativeLayout.LayoutParams.WRAP_CONTENT);
+//        layoutMain.addView(layoutTop);
+//        layoutMain.addView(layoutBottom, relParam);
+//
+//        populateTable();
+//    }
+//
+//    private void populateTable() {
+//        TableLayout table = (TableLayout) findViewById(R.id.resultsTable);
+//        for (int i = 0; i < 2; i++) {
+//            View tableRow = LayoutInflater.from(this).inflate(R.layout.results,null,false);
+//            TextView originValueTV  = (TextView) tableRow.findViewById(R.id.originValueTV);
+//            TextView answerValueTV  = (TextView) tableRow.findViewById(R.id.answerValueTV);
+//
+//            originValueTV.setText("" + (i + 1));
+//            answerValueTV.setText("" + new Date());
+//            table.addView(tableRow);
+//        }
+//    }
 }

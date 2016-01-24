@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MnemonicRevisionHelper</string>
-    <string name="mnemonic_input_hint">Add letters here to get mnemonic</string>
+    <string name="mnemonic_input_hint">Add letters here to get mnemonicA</string>
     <string name="origin">Origin: </string>
     <string name="answer">Answer: </string>
 </resources>

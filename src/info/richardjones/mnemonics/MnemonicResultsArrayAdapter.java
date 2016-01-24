@@ -29,8 +29,8 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<String> {
         TextView originTV = (TextView) rowView.findViewById(R.id.secondLine);
         TextView typeTV = (TextView) rowView.findViewById(R.id.thirdLine);
         answerTV.setText(values.get(position));
-        originTV.setText("Origin" + new Date());
-        typeTV.setText("Type");
+        originTV.setText("Origin: " + new Date());
+        typeTV.setText("Type: Song");
 
         return rowView;
     }

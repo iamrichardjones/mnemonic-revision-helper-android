@@ -24,7 +24,7 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.row_layout_orig, parent, false);
+        View rowView = inflater.inflate(R.layout.row_layout, parent, false);
         TextView answerTV = (TextView) rowView.findViewById(R.id.firstLine);
         TextView originTV = (TextView) rowView.findViewById(R.id.secondLine);
         TextView typeTV = (TextView) rowView.findViewById(R.id.thirdLine);

@@ -35,4 +35,3 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<String> {
         return rowView;
     }
 }
-

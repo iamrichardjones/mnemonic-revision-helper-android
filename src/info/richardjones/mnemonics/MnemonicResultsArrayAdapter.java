@@ -6,16 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import info.richardjones.mnemonics.loader.MatchingMnemonic;
 
-import java.util.Date;
 import java.util.List;
 
-public class MnemonicResultsArrayAdapter extends ArrayAdapter<String> {
+public class MnemonicResultsArrayAdapter extends ArrayAdapter<MatchingMnemonic> {
 
     private final Context context;
-    private final List<String> values;
+    private final List<MatchingMnemonic> values;
 
-    public MnemonicResultsArrayAdapter(Context context, List<String> values) {
+    public MnemonicResultsArrayAdapter(Context context, List<MatchingMnemonic> values) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
@@ -28,9 +28,10 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<String> {
         TextView answerTV = (TextView) rowView.findViewById(R.id.firstLine);
         TextView originTV = (TextView) rowView.findViewById(R.id.secondLine);
         TextView typeTV = (TextView) rowView.findViewById(R.id.thirdLine);
-        answerTV.setText(values.get(position));
-        originTV.setText("Origin: " + new Date());
-        typeTV.setText("Type: Song");
+        MatchingMnemonic matchingMnemonic = values.get(position);
+        answerTV.setText(matchingMnemonic.getDetail().getExpandedMnemonic());
+        originTV.setText("Origin: " + matchingMnemonic.getDetail().getOrigin());
+        typeTV.setText("Type: " + matchingMnemonic.getDetail().getCategory());
 
         return rowView;
     }

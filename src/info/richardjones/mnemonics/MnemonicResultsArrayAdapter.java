@@ -35,4 +35,8 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<MatchingMnemonic> 
 
         return rowView;
     }
+
+    public void filter(CharSequence s) {
+        //here is where I filter what is shown.
+    }
 }

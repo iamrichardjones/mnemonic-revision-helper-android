@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import info.richardjones.mnemonics.MnemonicResultsArrayAdapter;
@@ -40,6 +41,9 @@ public class MainActivity extends Activity {
 
         final MnemonicResultsArrayAdapter adapter = new MnemonicResultsArrayAdapter(this, loadData());
         listview.setAdapter(adapter);
+
+        final EditText userInput = (EditText) findViewById(R.id.mnemonic_input);
+        userInput.addTextChangedListener(new MnemonicInputTextListener(adapter));
     }
 
     private List<MatchingMnemonic> loadData() {

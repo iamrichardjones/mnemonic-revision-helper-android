@@ -35,3 +35,6 @@ Thanks to Sabine Reisinger for the German translation
 ### Legal Bit
 All data used in this project is sourced from the internet. I take no responsibility for any errors. Please let me know if there are problems or if any bits should be removed.
 
+###TODO
+* delete character does not refresh list
+* load the file (with loading screen)

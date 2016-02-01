@@ -1,9 +1,11 @@
 package info.richardjones.mnemonics.loader;
 
-public class HardCodedMnemonicMapLoader implements MnemonicMapLoader {
+import java.util.List;
+
+public class HardCodedMnemonicMapLoader implements MnemonicLoader<MatchingMnemonic> {
 
     @Override
-    public void load(MnemonicMap map) {
+    public void load(List<MatchingMnemonic> map) {
 //        map.add(new MatchingMnemonic("1jf1k", new MatchingMnemonicDetail("100% juice for 100% kids", "Juicy Juice","Slogan")));
 //        map.add(new MatchingMnemonic("5v", new MatchingMnemonicDetail("57 varieties", "H.J. Heinz","Slogan")));
 //        map.add(new MatchingMnemonic("9p", new MatchingMnemonicDetail("9944% pure", "Ivory Soap","Slogan")));

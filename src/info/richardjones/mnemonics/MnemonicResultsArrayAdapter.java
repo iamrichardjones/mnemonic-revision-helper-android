@@ -146,7 +146,6 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<MatchingMnemonic> 
 
                 List<MatchingMnemonic> filteredArrayNames = new ArrayList<MatchingMnemonic>();
 
-//                constraint = constraint.toString().toUpperCase();
                 for (int i = 0; i < originalData.size(); i++) {
                     MatchingMnemonic dataNames = originalData.get(i);
 
@@ -154,11 +153,10 @@ public class MnemonicResultsArrayAdapter extends ArrayAdapter<MatchingMnemonic> 
                     Arrays.sort(charArray);
 
                     Log.e("constraint", new String(charArray).toString().toUpperCase());
-                    Log.e("MNE", dataNames.getMnemonic().toUpperCase());
-                    Log.e("", "" + dataNames.getMnemonic().toUpperCase().equals(new String(charArray).toUpperCase()));
+                    Log.e("MNE", dataNames.getOrderedMnemonic().toUpperCase());
+                    Log.e("", "" + dataNames.getOrderedMnemonic().toUpperCase().equals(new String(charArray).toUpperCase()));
 
-                    if (dataNames.getMnemonic().toUpperCase().equals(new String(charArray).toUpperCase()))  {
-//                        Log.e("adding", "");
+                    if (dataNames.getOrderedMnemonic().toUpperCase().equals(new String(charArray).toUpperCase()))  {
                         filteredArrayNames.add(dataNames);
                     }
                 }

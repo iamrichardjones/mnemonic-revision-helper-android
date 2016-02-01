@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileMnemonicMapLoader implements MnemonicMapLoader {
+public class FileMnemonicMapLoader implements MnemonicLoader<MatchingMnemonic> {
 
     private static final String DELIMETER = "\\|";
     private final BufferedReader[] readers;
@@ -26,16 +26,16 @@ public class FileMnemonicMapLoader implements MnemonicMapLoader {
     }
 
     @Override
-    public void load(MnemonicMap map) throws IOException {
+    public void load(List<MatchingMnemonic> list) throws IOException {
         for (BufferedReader reader : readers) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] split = line.trim().split(DELIMETER);
                 if (split.length == 4) {
-                    map.add(new MatchingMnemonic(split[3], new MatchingMnemonicDetail(split[2], split[1], split[0])));
+                    list.add(new MatchingMnemonic(split[3], new MatchingMnemonicDetail(split[2], split[1], split[0])));
                 }
             }
-            reader.close();
+//            reader.close();
         }
     }
 }

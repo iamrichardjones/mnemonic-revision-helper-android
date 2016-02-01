@@ -11,10 +11,8 @@ import info.richardjones.mnemonics.MnemonicResultsArrayAdapter;
 import info.richardjones.mnemonics.R;
 import info.richardjones.mnemonics.loader.HardCodedMnemonicMapLoader;
 import info.richardjones.mnemonics.loader.MatchingMnemonic;
-import info.richardjones.mnemonics.loader.MnemonicMap;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -48,19 +46,8 @@ public class MainActivity extends Activity {
 
     private List<MatchingMnemonic> loadData() {
         List<MatchingMnemonic> res = new ArrayList();
-
-        MnemonicMap map = new MnemonicMap();
         HardCodedMnemonicMapLoader loader = new HardCodedMnemonicMapLoader();
-        loader.load(map);
-
-        Collection<List<MatchingMnemonic>> values = map.getMap().values();
-
-        for (List<MatchingMnemonic> value : values) {
-            for (MatchingMnemonic v : value) {
-                res.add(v);
-            }
-        }
-
+        loader.load(res);
         return res;
     }
 }

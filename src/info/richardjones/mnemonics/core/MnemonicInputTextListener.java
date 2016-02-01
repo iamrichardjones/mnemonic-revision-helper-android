@@ -17,7 +17,7 @@ public class MnemonicInputTextListener implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        adapter.filter(s);
+        adapter.getFilter().filter(s);
     }
 
     @Override

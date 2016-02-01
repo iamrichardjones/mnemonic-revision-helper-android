@@ -35,7 +35,7 @@ public class FileMnemonicMapLoader implements MnemonicMapLoader {
                     map.add(new MatchingMnemonic(split[3], new MatchingMnemonicDetail(split[2], split[1], split[0])));
                 }
             }
-//            reader.close();
+            reader.close();
         }
     }
 }

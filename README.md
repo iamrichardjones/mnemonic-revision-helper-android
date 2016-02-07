@@ -38,3 +38,4 @@ All data used in this project is sourced from the internet. I take no responsibi
 ###TODO
 * delete character does not refresh list
 * load the file (with loading screen)
+* Work out how UNIT TESTS are working here!!?!? For me anyway IntelliJ is making me struggle

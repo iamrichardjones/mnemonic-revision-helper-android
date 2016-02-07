@@ -3,6 +3,9 @@
 *This is the Android App Version of Mnemonic Revision Helper. There is a java console version on GitHub under this
 url: https://github.com/iamrichardjones/mnemonic-revision-helper*
 
+
+# Please be aware that this project is not in a state that I see as anywhere near ready. It is still a work in progress.
+
 Exams are the bane of the lives of students. When I was memorising things I often used mnemonics to remember. For example
 
 *Richard Of York Gave Battle In Vain*
@@ -36,6 +39,7 @@ Thanks to Sabine Reisinger for the German translation
 All data used in this project is sourced from the internet. I take no responsibility for any errors. Please let me know if there are problems or if any bits should be removed.
 
 ###TODO
+* move to gradle (I've forgotten how much I hated ANT)
 * delete character does not refresh list
 * load the file (with loading screen)
 * Work out how UNIT TESTS are working here!!?!? For me anyway IntelliJ is making me struggle

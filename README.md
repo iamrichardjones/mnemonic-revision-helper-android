@@ -4,7 +4,8 @@
 url: https://github.com/iamrichardjones/mnemonic-revision-helper*
 
 
-# Please be aware that this project is not in a state that I see as anywhere near ready. It is still a work in progress.
+## Please be aware that this project is not in a state that I see as anywhere near ready. It is still a work in progress...
+## See TODO list
 
 Exams are the bane of the lives of students. When I was memorising things I often used mnemonics to remember. For example
 
@@ -40,6 +41,6 @@ All data used in this project is sourced from the internet. I take no responsibi
 
 ###TODO
 * move to gradle (I've forgotten how much I hated ANT)
+* Work out how UNIT TESTS are working here!!?!? For me anyway IntelliJ is making me struggle much more than it should
 * delete character does not refresh list
 * load the file (with loading screen)
-* Work out how UNIT TESTS are working here!!?!? For me anyway IntelliJ is making me struggle
